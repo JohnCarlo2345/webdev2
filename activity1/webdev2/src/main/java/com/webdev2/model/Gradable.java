@@ -1,7 +1,5 @@
 package com.webdev2.model;
 
-public class Gradable {
-    double computeStanding() {
-        return 0;
-    }
+public interface Gradable {
+    double computeStanding();
 }
