@@ -11,28 +11,26 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/books")
 public class BookController {
-
     private final BookService bookService;
-
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
 
-    // 1. List all books — READ
+    // List all books
     @GetMapping
     public String listBooks(Model model) {
         model.addAttribute("books", bookService.getAllBooks());
         return "books/list";
     }
 
-    // 2. Show create form
+    // Show create form
     @GetMapping("/create")
     public String showCreateForm(Model model) {
         model.addAttribute("book", new Book());
         return "books/form";
     }
 
-    // 3. Process create — CREATE
+    // Save new book
     @PostMapping("/create")
     public String createBook(@Valid @ModelAttribute Book book, BindingResult result) {
         if (result.hasErrors()) {
@@ -42,7 +40,7 @@ public class BookController {
         return "redirect:/books";
     }
 
-    // 4. Show edit form — pre-populate
+    // Show edit form
     @GetMapping("/edit/{id}")
     public String showEditForm(@PathVariable Long id, Model model) {
         Book book = bookService.getBookById(id);
@@ -53,7 +51,7 @@ public class BookController {
         return "books/edit-form";
     }
 
-    // 5. Process edit — UPDATE
+    // Update book
     @PostMapping("/edit")
     public String updateBook(@Valid @ModelAttribute Book book, BindingResult result) {
         if (result.hasErrors()) {
@@ -62,12 +60,4 @@ public class BookController {
         bookService.updateBook(book);
         return "redirect:/books";
     }
-
-    // 6. Delete — DELETE
-    @GetMapping("/delete/{id}")
-    public String deleteBook(@PathVariable Long id) {
-        bookService.deleteBook(id);
-        return "redirect:/books";
-    }
 }
-

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Edit Book</title>
     <style>.error { color: red; }</style>
@@ -9,23 +9,23 @@
     <form th:action="@{/books/edit}" th:object="${book}" method="post">
         <input type="hidden" th:field="*{id}" />
         <p>
-            Title:
-            <input type="text" th:field="*{title}" />
+            <label for="title">Title:</label>
+            <input id="title" type="text" th:field="*{title}" />
             <span class="error" th:errors="*{title}"></span>
         </p>
         <p>
-            Author:
-            <input type="text" th:field="*{author}" />
+            <label for="author">Author:</label>
+            <input id="author" type="text" th:field="*{author}" />
             <span class="error" th:errors="*{author}"></span>
         </p>
         <p>
-            Publication Year:
-            <input type="number" th:field="*{publicationYear}" />
+            <label for="publicationYear">Publication Year:</label>
+            <input id="publicationYear" type="number" th:field="*{publicationYear}" />
             <span class="error" th:errors="*{publicationYear}"></span>
         </p>
         <p>
-            Genre:
-            <input type="text" th:field="*{genre}" />
+            <label for="genre">Genre:</label>
+            <input id="genre" type="text" th:field="*{genre}" />
             <span class="error" th:errors="*{genre}"></span>
         </p>
         <button type="submit">Update Book</button>
@@ -33,3 +33,6 @@
     </form>
 </body>
 </html>
+
+
+

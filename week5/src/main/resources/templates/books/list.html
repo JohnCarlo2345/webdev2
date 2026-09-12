@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Book Library</title>
     <style>
@@ -30,7 +30,7 @@
             <td>
                 <a th:href="@{/books/edit/{id}(id=${book.id})}">✏️ Edit</a> |
                 <a th:href="@{/books/delete/{id}(id=${book.id})}"
-                   onclick="return confirm('Delete this book?')">🗑️ Delete</a>
+                <onclick="return confirm('Delete this book?')">🗑️ Delete</a>
             </td>
         </tr>
     </table>
