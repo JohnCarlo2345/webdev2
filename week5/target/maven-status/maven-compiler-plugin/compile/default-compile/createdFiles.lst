@@ -1,0 +1,5 @@
+com\johncarlo\webdev2\model\Book.class
+com\johncarlo\webdev2\Webdev2Application.class
+com\johncarlo\webdev2\repository\BookRepository.class
+com\johncarlo\webdev2\service\BookService.class
+com\johncarlo\webdev2\controller\BookController.class

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Book</title>
+    <style>.error { color: red; }</style>
+</head>
+<body>
+    <h1>✏️ Edit Book</h1>
+    <form th:action="@{/books/edit}" th:object="${book}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <p>
+            <label for="title">Title:</label>
+            <input id="title" type="text" th:field="*{title}" />
+            <span class="error" th:errors="*{title}"></span>
+        </p>
+        <p>
+            <label for="author">Author:</label>
+            <input id="author" type="text" th:field="*{author}" />
+            <span class="error" th:errors="*{author}"></span>
+        </p>
+        <p>
+            <label for="publicationYear">Publication Year:</label>
+            <input id="publicationYear" type="number" th:field="*{publicationYear}" />
+            <span class="error" th:errors="*{publicationYear}"></span>
+        </p>
+        <p>
+            <label for="genre">Genre:</label>
+            <input id="genre" type="text" th:field="*{genre}" />
+            <span class="error" th:errors="*{genre}"></span>
+        </p>
+        <button type="submit">Update Book</button>
+        <a href="/books">Cancel</a>
+    </form>
+</body>
+</html>
+
+
+
