@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Tracker</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .task { border: 1px solid #ddd; padding: 1rem; margin: 0.5rem 0; border-radius: 6px; }
+        .completed { color: green; font-weight: bold; }
+        .pending { color: orange; }
+        a { text-decoration: none; color: #2563eb; }
+        .new-btn { display: inline-block; background: #2563eb; color: white; padding: 0.5rem 1rem; border-radius: 4px; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <h1>📋 Task Tracker</h1>
+    <a th:href="@{/tasks/new}" class="new-btn">+ Add New Task</a>
+
+    <p th:if="${tasks.isEmpty()}">No tasks yet. Create your first task above!</p>
+
+    <div th:each="task : ${tasks}" class="task">
+        <h3>
+            <a th:href="@{/tasks/{id}(id=${task.id})}" th:text="${task.title}">Task Title</a>
+            <span th:classappend="${task.completed} ? 'completed' : 'pending'"
+                  th:text="${task.completed} ? '✓ Completed' : '⏳ Pending'"></span>
+        </h3>
+    </div>
+</body>
+</html>

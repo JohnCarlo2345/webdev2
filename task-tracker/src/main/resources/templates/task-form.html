@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Task</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+        label { display: block; margin-top: 1rem; font-weight: bold; }
+        input, textarea { width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #ccc; border-radius: 4px; }
+        .error { color: red; font-size: 0.9rem; margin-top: 0.25rem; }
+        button { margin-top: 1.5rem; background: #2563eb; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Create New Task</h1>
+    <form th:object="${task}" th:action="@{/tasks}" method="post">
+        <label for="title">Title:</label>
+        <input id="title" type="text" th:field="*{title}" />
+        <div class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+
+        <label for="description">Description (optional):</label>
+        <textarea id="description" rows="4" th:field="*{description}"></textarea>
+        <div class="error" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+
+        <button type="submit">Create Task</button>
+    </form>
+    <p><a th:href="@{/tasks}">Cancel</a></p>
+</body>
+</html>

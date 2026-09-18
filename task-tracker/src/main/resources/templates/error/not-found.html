@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Not Found</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 3rem auto; padding: 0 1rem; text-align: center; }
+        h1 { color: #dc2626; }
+        a { color: #2563eb; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>❌ Task Not Found</h1>
+    <p th:text="${errorMessage}">The task you are looking for does not exist.</p>
+    <p><a th:href="@{/tasks}">← Back to Task List</a></p>
+</body>
+</html>
