@@ -1,4 +1,4 @@
-package com.johncarlo.webdev2.DTO;
+package com.johncarlo.webdev2.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
