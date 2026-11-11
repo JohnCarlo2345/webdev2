@@ -65,17 +65,16 @@ json
  
 File created:
  
--  WebConfig.java  - located at  src/main/java/com/johncarlo/webdev2/config/WebConfig.java 
+- WebConfig.java  - located at  src/main/java/com/johncarlo/webdev2/config/WebConfig.java
  
 Evidence - CORS headers present:
- 
-Using curl command:  curl -I http://localhost:8080/api/students 
+Using curl command:  curl - http://localhost:8080/api/students
  
 Response headers show:
  
--  Access-Control-Allow-Origin: * 
--  Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS 
--  Access-Control-Allow-Headers: * 
+- Access-Control-Allow-Origin: *
+- Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS
+- Access-Control-Allow-Headers: *
 
 ## Task 4 - Pagination and Filtering
  
